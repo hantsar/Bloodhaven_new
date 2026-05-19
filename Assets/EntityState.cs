@@ -1,16 +1,31 @@
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
-public class EntityState : MonoBehaviour
+public abstract class EntityState
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected Player player;
+    protected StateMachine stateMachine;
+    protected string stateName;
+
+    public EntityState(Player player, StateMachine stateMachine, string stateName)
     {
-        
+        this.player = player;
+        this.stateMachine = stateMachine;
+        this.stateName = stateName;
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual void Enter()
     {
-        
+        Debug.Log("I enter " + stateName);
+    }
+
+    public virtual void Update()
+    {
+        Debug.Log("I run update of " + stateName);
+    }
+
+    public virtual void Exit()
+    {
+        Debug.Log("I exit " + stateName);
     }
 }
