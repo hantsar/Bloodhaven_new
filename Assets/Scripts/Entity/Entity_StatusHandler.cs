@@ -5,7 +5,7 @@ using UnityEngine;
 public class Entity_StatusHandler : MonoBehaviour
 {
     private Entity entity;
-    private Entity_VFX entityVFX;
+    private Entity_VFX entityVfx;
     private Entity_Stats entityStats;
     private Entity_Health entityHealth;
     private ElementType currentEffect = ElementType.None;
@@ -21,7 +21,14 @@ public class Entity_StatusHandler : MonoBehaviour
         entityStats = GetComponent<Entity_Stats>();
         entityHealth = GetComponent<Entity_Health>();
         entity = GetComponent<Entity>();   
-        entityVFX = GetComponent<Entity_VFX>();
+        entityVfx = GetComponent<Entity_VFX>();
+    }
+
+    public void RemoveAllNegativeEffects()
+    {
+        StopAllCoroutines();
+        currentEffect = ElementType.None;
+        entityVfx.StopAllVfx();
     }
 
     public void ApplyStatusEffect(ElementType element, ElementalEffectData effectData)
@@ -36,7 +43,7 @@ public class Entity_StatusHandler : MonoBehaviour
             ApplyShockEffect(effectData.shockDuration, effectData.shockDamage, effectData.shockCharge);
     }
 
-    public void ApplyShockEffect(float duration, float damage, float charge)
+    private void ApplyShockEffect(float duration, float damage, float charge)
     {
         float lightningResistance = entityStats.GetElementalResistance(ElementType.Lightning);
         float finalCharge = charge * (1 - lightningResistance);
@@ -60,7 +67,7 @@ public class Entity_StatusHandler : MonoBehaviour
     {
         currentEffect = ElementType.None;
         currentCharge = 0;
-        entityVFX.StopAllVfx();
+        entityVfx.StopAllVfx();
     }
 
     private void DoLightningStrike(float damage)
@@ -72,13 +79,13 @@ public class Entity_StatusHandler : MonoBehaviour
     private IEnumerator ShockEffectCo(float duration)
     {
         currentEffect = ElementType.Lightning;
-        entityVFX.PlayOnStatusVfx(duration, ElementType.Lightning);
+        entityVfx.PlayOnStatusVfx(duration, ElementType.Lightning);
 
         yield return new WaitForSeconds(duration);
         StopShockEffect();
     }
 
-    public void ApplyBurnEffect(float duration, float fireDamage)
+    private void ApplyBurnEffect(float duration, float fireDamage)
     {
         float fireResistance = entityStats.GetElementalResistance(ElementType.Fire);
         float finalDamage = fireDamage * (1 - fireResistance);
@@ -89,7 +96,7 @@ public class Entity_StatusHandler : MonoBehaviour
     private IEnumerator BurnEffectCo(float duration, float totalDamage)
     {
         currentEffect = ElementType.Fire;
-        entityVFX.PlayOnStatusVfx(duration, ElementType.Fire);
+        entityVfx.PlayOnStatusVfx(duration, ElementType.Fire);
 
         int ticksPerSecond = 2;
         int tickCount = Mathf.RoundToInt(ticksPerSecond * duration);
@@ -107,7 +114,7 @@ public class Entity_StatusHandler : MonoBehaviour
         currentEffect = ElementType.None;
     }
 
-    public void ApplyChillEffect(float duration, float slowMultiplier)
+    private void ApplyChillEffect(float duration, float slowMultiplier)
     {
         float iceResistance = entityStats.GetElementalResistance(ElementType.Ice);
         float finalDuration = duration * (1 - iceResistance);
@@ -119,7 +126,7 @@ public class Entity_StatusHandler : MonoBehaviour
     {
         entity.SlowDownEntity(duration, slowMultiplier);
         currentEffect = ElementType.Ice;
-        entityVFX.PlayOnStatusVfx(duration, ElementType.Ice);
+        entityVfx.PlayOnStatusVfx(duration, ElementType.Ice);
 
         yield return new WaitForSeconds(duration);
         currentEffect = ElementType.None;

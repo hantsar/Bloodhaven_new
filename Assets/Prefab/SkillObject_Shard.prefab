@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7fb36aa44d2ca64bb7c67b8e5fad61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onHitVfx: {fileID: 7060198776886139612, guid: ea81e2907ac7f424d87eed3473dd8528, type: 3}
   whatsIsEnemy:
     serializedVersion: 2
     m_Bits: 256

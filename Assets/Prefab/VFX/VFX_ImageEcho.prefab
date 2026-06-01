@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 1945565278410273083}
   - component: {fileID: 3854499148356699305}
   m_Layer: 0
-  m_Name: VFX_imageEcho
+  m_Name: VFX_ImageEcho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

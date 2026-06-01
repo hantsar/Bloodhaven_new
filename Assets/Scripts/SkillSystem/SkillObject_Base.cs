@@ -2,13 +2,25 @@ using UnityEngine;
 
 public class SkillObject_Base : MonoBehaviour
 {
+    [SerializeField] private GameObject onHitVfx;
+    [Space]
     [SerializeField] protected LayerMask whatsIsEnemy;
     [SerializeField] protected Transform targetCheck;
     [SerializeField] protected float checkRadius = 1;
 
+    protected Rigidbody2D rb;
+    protected Animator anim;
     protected Entity_Stats playerStats;
     protected DamageScaleData damageScaleData;
     protected ElementType usedElement;
+    protected bool targetGotHit;
+    protected Transform lastTarget;
+
+    protected virtual void Awake()
+    {
+        anim = GetComponentInChildren<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     protected void DamageEnemiesInRadius(Transform t, float radius)
     {
@@ -27,10 +39,16 @@ public class SkillObject_Base : MonoBehaviour
             ElementType element = attackData.element;
 
 
-            damgable.TakeDamage(physDamage, elemDamage, element, transform);
+            targetGotHit = damgable.TakeDamage(physDamage, elemDamage, element, transform);
 
             if (element != ElementType.None)
                 statusHandler?.ApplyStatusEffect(element, attackData.effectData);
+
+            if (targetGotHit)
+            {
+                lastTarget = target.transform;
+                Instantiate(onHitVfx, target.transform.position, Quaternion.identity);
+            }
 
             usedElement = element;
         }

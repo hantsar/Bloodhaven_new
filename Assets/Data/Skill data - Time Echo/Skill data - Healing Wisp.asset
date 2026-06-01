@@ -12,8 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c524c4b45d6effc499b68676d2fd08af, type: 3}
   m_Name: Skill data - Healing Wisp
   m_EditorClassIdentifier: 
-  cost: 2
   displayName: Healing Wisp
   description: "When time echo is killed by enemy, it releases a healing wisp that
     moves toward you and heals you on contact.\L"
   icon: {fileID: 1123054922, guid: 195aa887d2df95944a0744f130aea8c8, type: 3}
+  cost: 2
+  unlockedByDefault: 0
+  skillType: 1
+  upgradeData:
+    upgradeType: 15
+    cooldown: 0
+    damageScaleData:
+      physical: 1
+      elemental: 1
+      chillDuration: 3
+      chillSlowMultiplier: 0.2
+      burnDuration: 3
+      burnDamageScale: 1
+      shockDuration: 3
+      shockDamageScale: 1
+      shockCharge: 0.4
