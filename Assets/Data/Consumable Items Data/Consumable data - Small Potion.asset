@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e5c0b9e9ea7c5d4ab7c7d848454d685, type: 3}
+  m_Name: Consumable data - Small Potion
+  m_EditorClassIdentifier: 
+  itemName: Small Potion
+  itemIcon: {fileID: -1877444001, guid: 195aa887d2df95944a0744f130aea8c8, type: 3}
+  itemType: 4
+  maxStackSize: 5
+  itemEffect: {fileID: 11400000, guid: c351548ef1d325044aa20945ee4ca7ef, type: 2}
