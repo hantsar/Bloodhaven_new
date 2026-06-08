@@ -12,10 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0a936e4f5315094cbbe52ae51262a65, type: 3}
   m_Name: Equipment data - Wooden Sword
   m_EditorClassIdentifier: 
+  itemPrice: 100
+  minStackSizeAtShop: 1
+  maxStackSizeAtShop: 1
+  itemRarity: 240
+  dropChance: 65
+  maxDropChance: 65
   itemName: Wooden Sword
   itemIcon: {fileID: 1481612829, guid: 195aa887d2df95944a0744f130aea8c8, type: 3}
   itemType: 1
   maxStackSize: 1
+  itemEffect: {fileID: 0}
   modifiers:
   - statType: 7
     value: 4

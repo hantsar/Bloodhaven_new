@@ -10,18 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0a936e4f5315094cbbe52ae51262a65, type: 3}
-  m_Name: Equipment data - Winter's Touch
+  m_Name: Equipment data - Ring of Luck
   m_EditorClassIdentifier: 
-  itemName: Winter's Touch
-  itemIcon: {fileID: -1116320628, guid: 195aa887d2df95944a0744f130aea8c8, type: 3}
-  itemType: 2
+  itemPrice: 100
+  minStackSizeAtShop: 1
+  maxStackSizeAtShop: 1
+  itemRarity: 806
+  dropChance: 19.5
+  maxDropChance: 65
+  itemName: Ring of Luck
+  itemIcon: {fileID: 242650567, guid: 195aa887d2df95944a0744f130aea8c8, type: 3}
+  itemType: 3
   maxStackSize: 1
+  itemEffect: {fileID: 0}
   modifiers:
+  - statType: 8
+    value: 15
   - statType: 0
-    value: 250
-  - statType: 14
-    value: 20
-  - statType: 2
-    value: 14
-  - statType: 16
-    value: 35
+    value: 50
+  - statType: 15
+    value: 12

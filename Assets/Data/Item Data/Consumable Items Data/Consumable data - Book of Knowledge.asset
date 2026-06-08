@@ -10,10 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e5c0b9e9ea7c5d4ab7c7d848454d685, type: 3}
-  m_Name: Consumable data - Book of Oblivion
+  m_Name: Consumable data - Book of Knowledge
   m_EditorClassIdentifier: 
-  itemName: Book of Oblivion
-  itemIcon: {fileID: -1492211414, guid: 195aa887d2df95944a0744f130aea8c8, type: 3}
+  itemPrice: 100
+  minStackSizeAtShop: 1
+  maxStackSizeAtShop: 1
+  itemRarity: 911
+  dropChance: 9
+  maxDropChance: 65.1
+  itemName: Book of Knowledge
+  itemIcon: {fileID: -1820632036, guid: 195aa887d2df95944a0744f130aea8c8, type: 3}
   itemType: 4
-  maxStackSize: 1
-  itemEffect: {fileID: 11400000, guid: 70c87b8c833ffff42b3c3bcf620d3a29, type: 2}
+  maxStackSize: 20
+  itemEffect: {fileID: 11400000, guid: f87bad70ffb29bc4f9babaa2d65b3ca0, type: 2}
