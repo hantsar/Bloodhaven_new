@@ -18,6 +18,9 @@ public class GameData
     public SerializableDictionary<string, bool> skillTreeUI; // skill name -> inlock status
     public SerializableDictionary<SkillType, SkillUpgradeType> skillUpgrades; // skill type -> upgrade type
 
+    public string lastScenePlayed;
+    public Vector3 lastPlayerPosition;
+
     public GameData()
     {
         inventory = new SerializableDictionary<string, int>();

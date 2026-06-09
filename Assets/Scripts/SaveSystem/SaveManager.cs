@@ -5,11 +5,18 @@ using UnityEngine;
 
 public class SaveManager : MonoBehaviour
 {
+    public static SaveManager instance;
+
     private FileDataHandler dataHandler;
     private GameData gameData;
     private List<ISaveable> allSaveables;
 
     [SerializeField] private string fileName = "bloodhaven.json";
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private IEnumerator Start()
     {
@@ -17,7 +24,7 @@ public class SaveManager : MonoBehaviour
         dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
         allSaveables = FindISaveables();
 
-        yield return new WaitForSeconds(.01f);
+        yield return null;
         LoadGame();
     }
 
@@ -49,6 +56,8 @@ public class SaveManager : MonoBehaviour
     {
         dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
         dataHandler.Delete();
+
+        LoadGame(); 
     }
 
     private void OnApplicationQuit()
