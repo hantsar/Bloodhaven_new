@@ -23,7 +23,7 @@ public class UI_ToolTip : MonoBehaviour
 
     private void UpdatePosition(RectTransform targetRect)
     {
-        float screenCenterX = Screen.width / 2;
+        float screenCenterX = Screen.width / 2f;
         float screenTop = Screen.height;
         float screenBottom = 0;
 
@@ -31,7 +31,7 @@ public class UI_ToolTip : MonoBehaviour
 
         targetPosition.x = targetPosition.x > screenCenterX ? targetPosition.x - offset.x : targetPosition.x + offset.x;
 
-        float verticalHalf = rect.sizeDelta.y / 2;
+        float verticalHalf = rect.sizeDelta.y / 2f;
         float topY = targetPosition.y + verticalHalf;
         float bottomY = targetPosition.y - verticalHalf;
 

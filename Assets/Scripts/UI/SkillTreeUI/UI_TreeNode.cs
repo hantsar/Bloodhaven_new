@@ -26,7 +26,10 @@ public class UI_TreeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     private void Start()
     {
-        UpdateIconColor(GetColorByHex(lockedColorHex));
+        if(isUnlocked == false)
+            UpdateIconColor(GetColorByHex(lockedColorHex));
+
+
         UnlockDefaultSkill();
     }
 

@@ -60,6 +60,7 @@ public class Player : Entity
         statusHandler = GetComponent<Entity_StatusHandler>();
 
         input = new PlayerInputSet();
+        ui.SetupControlsUI(input);
 
         idleState = new Player_IdleState(this, stateMachine, "idle");
         moveState = new Player_MoveState(this, stateMachine, "move");
@@ -178,9 +179,6 @@ public class Player : Entity
         input.Player.Spell.performed += ctx => skillManager.timeEcho.TryUseSkill();
 
         input.Player.Interact.performed += ctx => TryInteract();
-
-        input.Player.ToggleSkillTreeUI.performed += ctx => ui.ToggleSkillTreeUI();
-        input.Player.ToggleInventoryUI.performed += ctx => ui.ToggleInventoryUI();
     }
 
     private void OnDisable()

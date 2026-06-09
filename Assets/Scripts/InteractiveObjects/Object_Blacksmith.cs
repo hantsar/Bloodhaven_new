@@ -17,7 +17,8 @@ public class Object_Blacksmith : Object_NPC, IInteractable
     public void Interact()
     {
         ui.storageUI.SetupStorage(inventory, storage);
-        ui.storageUI.gameObject.SetActive(true);
+
+        ui.OpenStorageUI(true);
     }
 
     protected override void OnTriggerEnter2D(Collider2D collision)
@@ -30,7 +31,7 @@ public class Object_Blacksmith : Object_NPC, IInteractable
     protected override void OnTriggerExit2D(Collider2D collision)
     {
         base.OnTriggerExit2D(collision);
-        ui.SwitchOffAllTooltips();
-        ui.storageUI.gameObject.SetActive(false);
+        ui.HideAllTooltips();
+        ui.OpenStorageUI(false);
     }
 }
