@@ -56647,6 +56647,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxInventorySize: 10
   itemList: []
+  itemDataBase: {fileID: 11400000, guid: 79eee6a0e847eca49b96a3ccf420e51c, type: 2}
   materialStash: []
 --- !u!1 &278279782
 GameObject:
@@ -62598,6 +62599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxInventorySize: 30
   itemList: []
+  itemDataBase: {fileID: 11400000, guid: 79eee6a0e847eca49b96a3ccf420e51c, type: 2}
   shopData: {fileID: 11400000, guid: 19549cbbe8fcd694fae4c72be9e50f3a, type: 2}
   minItemsAmount: 4
 --- !u!1 &677429461
@@ -70435,6 +70437,51 @@ MonoBehaviour:
   itemIcon: {fileID: 862322893}
   itemStackSize: {fileID: 697919194}
   slotType: 0
+--- !u!1 &1225695210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1225695212}
+  - component: {fileID: 1225695211}
+  m_Layer: 0
+  m_Name: '*** SAVE MANAGER ***'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1225695211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225695210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e29dbd61f936b6c4784b532dde9ea178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fileName: bloodhaven.json
+--- !u!4 &1225695212
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225695210}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1340.0924, y: 527.1423, z: -4.8337197}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1231538885
 GameObject:
   m_ObjectHideFlags: 0
@@ -71414,7 +71461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxInventorySize: 10
   itemList: []
-  gold: 10000
+  itemDataBase: {fileID: 11400000, guid: 79eee6a0e847eca49b96a3ccf420e51c, type: 2}
   equipList:
   - slotType: 1
     equipedItem:
@@ -71436,6 +71483,7 @@ MonoBehaviour:
       itemData: {fileID: 0}
       stackSize: 0
       itemEffect: {fileID: 0}
+  gold: 500
 --- !u!114 &1303236223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114510,3 +114558,4 @@ SceneRoots:
   - {fileID: 663903931}
   - {fileID: 274597060}
   - {fileID: 1303099108}
+  - {fileID: 1225695212}
